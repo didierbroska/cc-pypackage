@@ -34,13 +34,13 @@ This template build from original [Cookiecutter][1] template for a Python packag
 ## Quickstart
 
 Install the latest Cookiecutter if you haven't installed it yet (this requires
-Cookiecutter 1.4.0 or higher)::
+Cookiecutter 1.4.0 or higher):
 
 ```sh
 pip install -U cookiecutter
 ```
 
-Generate a Python package project::
+Generate a Python package project:
 
 ```sh
 cookiecutter gh:didierbroska/cc-pypackage
@@ -49,28 +49,16 @@ cookiecutter gh:didierbroska/cc-pypackage
 Then:
 
 - Create a repo and put it there.
-- Add the repo to your [Travis-CI][2] account.
 - Install the dev requirements into a virtualenv. (`make install`)
 - Register your project with PyPI.
-- Run the Travis CLI command `travis encrypt --add deploy.password` to encrypt your PyPI password in Travis config and activate automated deployment on PyPI when you push a new tag to master branch.
-- Add the repo to your [Read the Docs][5] account + turn on the Read the Docs service hook.
-- Release your package by pushing a new tag to master.
+- Run the GitHub Actions build when you push in `master` and deploy in PyPI when you push new tag in `master`.
+- Add the documention in GitHub Pages when push to `master`.
+- Release your package by pushing a new tag to `master`.
 
-*Modify this with setup.cfg*
+- Add a package dependencies in `setup.cfg` file that specifies the packages you will need for  your project and their versions. For more info see the [setuptools documentation about setup.cfg only project](https://setuptools.readthedocs.io/en/latest/setuptools.html#setup-cfg-only-projects).
+- Activate your project [on pyup.io][11](optionnal).
 
-- Add a `requirements.txt` file that specifies the packages you will need for
-  your project and their versions. For more info see the [pip docs for requirements files][7].
-- Activate your project [on pyup.io][6].
+[11]: https://pyup.io/
 
-[7]: https://pip.pypa.io/en/stable/user_guide/#requirements-files
+For more details, see the [cc-pypackage tutorial](https://cookiecutter-pypackage.readthedocs.io/en/latest/tutorial.html)**TODO : update like when doc is ok**.
 
-For more details, see the [cookiecutter-pypackage tutorial](https://cookiecutter-pypackage.readthedocs.io/en/latest/tutorial.html).
-
-[2]: http://travis-ci.org/
-[3]: http://testrun.org/tox/
-[4]: http://sphinx-doc.org/
-[5]: https://readthedocs.io/
-[6]: https://pyup.io/
-[8]: https://github.com/c4urself/bump2version
-[9]: https://github.com/lgiordani/punch
-[10]: https://pipenv.readthedocs.io/en/latest/
