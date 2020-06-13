@@ -40,4 +40,4 @@ jobs:
         with:
           python-version: '3.8'
       - name: Build MkDocs
-        uses: didierbroska/gh-actions-mkdocs-deploy-gh-pages
+        uses: didierbroska/gh-actions-mkdocs-deploy-gh-pages@v2.0.1
