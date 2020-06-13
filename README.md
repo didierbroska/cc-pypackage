@@ -1,34 +1,35 @@
-# Cookiecutter PyPackage
+# PyPackage
 
 *TODO : add badges*
 
-[Cookiecutter][1] template for a Python package.
+This template build from original [Cookiecutter][1] template for a Python package.
 
-- GitHub repo: https://github.com/didierbroska/cookiecutter-pypackage/
-- Documentation: https://cookiecutter-pypackage.readthedocs.io/
+- GitHub repo: https://github.com/didierbroska/cc-pypackage/
+- Documentation: **TODO: GH Pages**
 - Free software: MIT License
 
 ## Features
 
 - Testing setup with `unittest` and `python setup.py test` or `pytest`
-- [Travis-CI][2]: Ready for Travis Continuous Integration testing
-- [Tox][3] testing: Setup to easily test for Python 3.5, 3.6, 3.7, 3.8
-- [Sphinx][4] docs: Documentation ready for generation with, for example, [Read the Docs][5]
+- [GitHub Actions][2]: Ready for GiHub Actions Continuous Integration testing
+- [PyTest][3]: testing: Ready to test code.
+- [Pytest-cov][4] & [Coverage][5]: testing: Ready to test code with coverage (optional)
+- [Tox][6] testing: Setup to easily test for Python 3.5, 3.6, 3.7, 3.8
+- [MkDocs][7] docs: Documentation ready for generation with.
 - [bump2version][8]: Pre-configured version bumping with a single command
-- Auto-release to PyPI when you push a new tag to master (optional)
+- Auto-release to [PyPI][9]  when you push a new tag to master or [PyPI testing][10] deploy with specific branch named `test-deploy`.
 - Command line interface using Click (optional)
 
 [1]: https://github.com/audreyr/cookiecutter
-
-## Build Status
-
-Linux:
-
-  *TODO : add build badge*
-
-Windows:
-
-  *TODO : add build badge*
+[2]: https://help.github.com/en/actions
+[3]: https://docs.pytest.org/
+[4]: https://pytest-cov.readthedocs.io/
+[5]: https://coverage.readthedocs.io/
+[6]: https://tox.readthedocs.io/
+[7]: https://www.mkdocs.org/
+[8]: https://github.com/c4urself/bump2version
+[9]: https://pypi.org/
+[10]: https://test.pypi.org/
 
 ## Quickstart
 
@@ -42,7 +43,7 @@ pip install -U cookiecutter
 Generate a Python package project::
 
 ```sh
-cookiecutter https://github.com/didierbroska/cookiecutter-pypackage.git
+cookiecutter gh:didierbroska/cc-pypackage
 ```
 
 Then:
