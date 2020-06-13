@@ -1,9 +1,9 @@
-site_name: cookiecutter-pypackage documentation
+site_name: cc-pypackage template documentation
 site_description: Documentation about my cookicutter template for Python projects.
 site_author: Didier Bröska
 
-repo_url: https://github.com/didierbroska/cookiecutter-pypackage
-edit_uri: ""
+repo_url: https://github.com/didierbroska/cc-pypackage/
+edit_uri: https://didierbroska.github.io/cc-pypackage/
 
 nav:
   - Welcome: index.md
