@@ -1,4 +1,4 @@
-.PHONY: clean clean-test clean-pyc clean-build docs help
+.PHONY: clean clean-test clean-pyc clean-docs clean-build docs help
 .DEFAULT_GOAL := help
 
 define BROWSER_PYSCRIPT
@@ -41,7 +41,7 @@ replay: BAKE_OPTIONS=--replay
 replay: watch
 	;
 
-clean: clean-build clean-pyc clean-test ## remove all build, test, coverage and Python artifacts
+clean: clean-build clean-pyc clean-test clean-docs ## remove all build, test, coverage and Python artifacts
 
 clean-build: ## remove build artifacts
 	rm -fr build/
@@ -62,21 +62,33 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr htmlcov/
 	rm -fr .pytest_cache
 
+clean-docs: ## remove docs builded
+	rm -rf site/
 
 test: ## run tests quickly with the default Python
 	pytest
 
+lint: ## run check PEP8 quickly with the default Python
+	flake8
+
+coverage: ## run tests with coverage with the default Python
+	# FIXME
+	coverage
+
 test-all: ## run tests on every Python version with tox
 	tox
 
-docs: ## generate Sphinx HTML documentation, including API docs
-	$(MAKE) -C docs clean
-	$(MAKE) -C docs html
-	sphinx-build -b html -d docs/doctree . docs/html
-	$(BROWSER) docs/_build/html/index.html
+docs: clean-docs ## generate Sphinx HTML documentation, including API docs
+	mkdocs build -v
 
 servedocs: docs ## compile the docs watching for changes
 	watchmedo shell-command -p '*.rst' -c '$(MAKE) -C docs html' -R -D .
 
-install: clean ## install the package to the active Python's site-packages
+install: clean ## install the package for develop
 	pip install -e '.[dev]'
+
+install-test: clean ## install the package for tests
+	pip install -e '.[tests]'
+
+install-docs: clean ## install the package for docs
+	pip install -e '.[docs]'	
