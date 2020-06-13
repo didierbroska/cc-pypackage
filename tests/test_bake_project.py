@@ -226,7 +226,7 @@ def test_using_pytest(cookies):
         run_inside_dir('python setup.py test', str(result.project)) == 0
 
 
-@pytest.mark.skip(reason="I d'ont understand how to run all project at this time")
+@pytest.mark.skip(reason="I d'ont understand how to run all project")
 def test_not_using_pytest(cookies):
     with bake_in_temp_dir(cookies) as result:
         assert result.project.isdir()
