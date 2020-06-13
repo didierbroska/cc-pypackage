@@ -1,17 +1,19 @@
-# Welcome to MkDocs
+# Welcome to Cookiecutter PyPackage template
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+For full documentation about CookieCutter visit [CookieCutter documentation](https://cookiecutter.readthedocs.io/).
 
-## Commands
+This modified template adds change about :
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+- switch from Travis CI to GiHub Actions for tests, build and deploy,
+- switch from Sphinx to MkDocs for documentation,
+- add support for Pyenv to manage Python version and virtualenv,
+- adapt setup packaging in only `setup.cfg` file.
 
-## Project layout
+## Getting Started
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+- [Readme](getting-started/README.md)
+- [Tutorial](getting-started/TUTORIAL.md)
+
+## Basics
+
+## Advanced Features

@@ -31,10 +31,10 @@ pip install cookiecutter
 
 ## Step 2: Generate Your Package
 
-Use `cookiecutter`, pointing it at the cookiecutter-pypackage repo:
+Use `cookiecutter`, pointing it at the cc-pypackage repo:
 
 ```bash
-cookiecutter gh:didierbroska/cookiecutter-pypackage
+cookiecutter gh:didierbroska/cc-pypackage
 ```
 
 You'll be asked to enter a bunch of values to set the package up.
