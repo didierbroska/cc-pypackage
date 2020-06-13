@@ -85,6 +85,7 @@ servedocs: docs ## compile the docs watching for changes
 	watchmedo shell-command -p '*.rst' -c '$(MAKE) -C docs html' -R -D .
 
 install: clean ## install the package for develop
+	pip install black || true
 	pip install -e '.[dev]'
 
 install-test: clean ## install the package for tests
