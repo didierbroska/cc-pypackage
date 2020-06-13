@@ -1,6 +1,6 @@
-# PyPackage
+# Template cookiecutter - Python Package
 
-*TODO : add badges*
+![](https://github.com/didierbroska/cc-pypackage/workflows/CI%20%28cookiecutter%29/badge.svg)
 
 This template build from original [Cookiecutter][1] template for a Python package.
 
