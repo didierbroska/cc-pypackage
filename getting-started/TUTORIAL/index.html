@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Didier Bröska">
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Tutorial - cc-pypackage template documentation</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">cc-pypackage template documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Welcome</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Getting Started <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Tutorial</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://didierbroska.github.io/cc-pypackage/getting-started/TUTORIAL.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#tutorial" class="nav-link">Tutorial</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#step-1-install-cookiecutter" class="nav-link">Step 1: Install Cookiecutter</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#step-2-generate-your-package" class="nav-link">Step 2: Generate Your Package</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#step-3-create-a-github-repo" class="nav-link">Step 3: Create a GitHub Repo</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#step-4-install-dev-requirement" class="nav-link">Step 4: Install Dev Requirement</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#step-5-set-up-github-actions" class="nav-link">Step 5: Set Up GitHub Actions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#step-6-set-up-mkdocs-github-pages" class="nav-link">Step 6: Set Up Mkdocs / GitHub Pages</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="tutorial">Tutorial</h1>
+<p>To start with, you will need a <a href="https://github.com/">GitHub Account</a> and un account on <a href="https//pypi.python.org/pypi">PyPI</a>. Create these before you get started on this tutorial.</p>
+<blockquote>
+<p>It's possible to test deployement with <a href="https://test.pypi.org/">PyPI Test</a></p>
+</blockquote>
+<h2 id="step-1-install-cookiecutter">Step 1: Install Cookiecutter</h2>
+<p>First, you need to create and activate a virtualenv for the package project. Use your favorite method, or create a pyenv-virtualenv for your new package like this:</p>
+<pre><code class="bash">pyenv vitualenv &lt;python-version&gt; &lt;my-project&gt;
+</code></pre>
+
+<p>Here <code>&lt;your-env&gt;</code> is the name of the package that you'll create. <em>Or you can use another name, if you want.</em></p>
+<p>Activate your environment:</p>
+<pre><code class="bash">pyenv activate &lt;my-project&gt;
+</code></pre>
+
+<p>Install cookiecutter:</p>
+<pre><code class="bash">pip install cookiecutter
+</code></pre>
+
+<h2 id="step-2-generate-your-package">Step 2: Generate Your Package</h2>
+<p>Use <code>cookiecutter</code>, pointing it at the cc-pypackage repo:</p>
+<pre><code class="bash">cookiecutter gh:didierbroska/cc-pypackage
+</code></pre>
+
+<p>You'll be asked to enter a bunch of values to set the package up.
+If you don't know what to enter, stick with the defaults.</p>
+<h2 id="step-3-create-a-github-repo">Step 3: Create a GitHub Repo</h2>
+<p>Enter in your new folder project named by <code>cookiecutter</code>, and create a <code>git</code> base, tracked all files et make your first commit and push to create a new repo. This is so that GitHub Actions and pyup.io can find it when we get to Step 5 and Step 7.</p>
+<pre><code class="bash">cd &lt;my-project&gt;
+git init
+git add .
+git commit -m &quot;Initial commit&quot;
+git remote add origin git@github.com:&lt;your-gh-account-name&gt;/&lt;your-project&gt;.git
+git push -u origin master
+</code></pre>
+
+<p>To create a repository, you'll need a ssh key to push the repo. you can <a href="https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key">generate</a> a key and/or <a href="https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent">add</a> an existing one.</p>
+<h2 id="step-4-install-dev-requirement">Step 4: Install Dev Requirement</h2>
+<p>Your virtualenv should still be activated. If it isn't, activate it now. Install the new project's local developpement requirements:</p>
+<p><strong>For pyenv user</strong></p>
+<p><a href="https://github.com/pyenv/pyenv"><code>Pyenv</code></a> allows to create a local environnment which loading when you enter on the folder.</p>
+<pre><code class="bash">pyenv local &lt;my-project&gt; &lt;version-python-1&gt; &lt;version-python-N&gt;
+</code></pre>
+
+<blockquote>
+<p><code>&lt;version-python&gt;</code> permits to handle test others version with tox. You'll see it at the <strong>TODO</strong>.</p>
+</blockquote>
+<p>You should still b in the folder containing the <code>setup.cfg</code> file.</p>
+<pre><code class="bash">make develop
+# or you don't use make
+pip install -e '.[dev]'
+</code></pre>
+
+<h2 id="step-5-set-up-github-actions">Step 5: Set Up GitHub Actions</h2>
+<p><a href="https://help.github.com/en/actions">GitHub Actions</a> is a continous integration tool integrated at GiHub used to prevent intregration problems. Every commit to the master branch will trigger automated builds of the application.</p>
+<p>Before running <code>Actions</code>, you must be create a <a href="https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets"><code>Secret</code></a> with your <a href="https://pypi.org/help/#apitoken">token</a> from your PyPI account. </p>
+<blockquote>
+<p>If you want trying deployement you can use <a href="https://test.pypi.org/">PyPI Test</a> before.</p>
+</blockquote>
+<h2 id="step-6-set-up-mkdocs-github-pages">Step 6: Set Up Mkdocs / GitHub Pages</h2>
+<p>In this template, the documents generator is <a href="https://www.mkdocs.org/">MkDocs</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
