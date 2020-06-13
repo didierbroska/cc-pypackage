@@ -1,0 +1,14 @@
+site_name: cookiecutter-pypackage documentation
+site_description: Documentation about my cookicutter template for Python projects.
+site_author: Didier Bröska
+
+repo_url: https://github.com/didierbroska/cookiecutter-pypackage
+edit_uri: ""
+
+nav:
+  - Welcome: index.md
+  - Getting Started:
+    - Introduction: getting-started/README.md
+    - Tutorial: getting-started/TUTORIAL.md
+  # TODO - Tests:
+  # TODO - Continous Integration:
